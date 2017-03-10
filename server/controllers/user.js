@@ -15,18 +15,10 @@ module.exports = {
      })
      .then(user => res.status(201).send(user))
      .catch(error => res.status(400).send(error));
- }
-  // list (req, res) {
-  //      User.findAll(
-  //          where: {
-  //              rank: {
-  //              createdAt: {
-  //                  $lt: new Date()
-  //              }
-  //            }
-  //          }
-  //      )
-  //      .then(contact => res.status(201).send(contact))
-  //      .catch(error => res.status(400).send(error));
-  // },
+ },
+  list (req, res) {
+       User.findAll()
+       .then(contact => res.status(201).send(contact))
+       .catch(error => res.status(400).send(error));
+  }
 }
