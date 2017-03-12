@@ -5,6 +5,7 @@ const User = require("../models").User;
 module.exports = {
   // Add your routes here
   create (req, res) {
+      console.log("The current user is ", req.user);
       Link.create({
           title: req.body.title,
           url: req.body.url
