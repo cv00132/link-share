@@ -5,6 +5,7 @@ const User = require("../models").User;
 module.exports = {
    authenticate (req, res, next) {
      // Look for a token.
+     console.log(token);
      var token = req.headers['access-token'] || req.query.access_token;
 
      // If they didn't provide a token, send them away.

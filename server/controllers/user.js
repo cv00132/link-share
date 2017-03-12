@@ -38,7 +38,6 @@ module.exports = {
         var input = bcrypt.hashSync(req.body.password, user.salt);
         if (input === user.password) {
           var token = jwt.encode({ id: user.id, name: user.name }, appSecrets.jwtSecret);
-          console.log(token);
           var json = {
              user: user,
              token: token
