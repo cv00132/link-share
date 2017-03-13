@@ -1,15 +1,15 @@
 'use strict';
 module.exports = function(sequelize, DataTypes) {
-  var Link = sequelize.define('Link', {
+  var Comment = sequelize.define('Comment', {
     user_id: DataTypes.INTEGER,
-    title: DataTypes.STRING,
-    url: DataTypes.STRING
+    link_id: DataTypes.INTEGER,
+    body: DataTypes.STRING
   }, {
     classMethods: {
       associate: function(models) {
-        // Link.hasOne(models.User, { foreignKey: 'user_id'} )
+        // associations can be defined here
       }
     }
   });
-  return Link;
+  return Comment;
 };
